@@ -1,0 +1,21 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /fitness
+spring:
+  datasource:
+    url: ${DBMS_CONNECTION:jdbc:sqlserver://localhost:1433;databaseName=FitnessWeb;encrypt=false;trustServerCertificate=true}
+    driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    username: ${DBMS_USERNAME:sa}
+    password: ${DBMS_PASSWORD:tienan2004}
+  jpa:
+    database-platform: org.hibernate.dialect.SQLServer2012Dialect
+    hibernate:
+      ddl-auto: update
+      bytecode:
+        provider: none
+    show-sql: true
+jwt:
+  signerKey: "Qu6PEaShoaIcjMLCkYD2HB+cwmQMcTEBr8MuutENp/hREk2aQ6diJtUmlNIYy8Ee"
+  valid-duration: 3600 # in second
+  refreshable-duration: 36000 # in second

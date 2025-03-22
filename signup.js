@@ -1,5 +1,6 @@
 const form = document.getElementById('form');
 const name_input = document.getElementById('name-input')
+const gender_input = document.getElementById('gender-input')
 const email_input = document.getElementById('email-input')
 const phone_input = document.getElementById('phone-input')
 const password_input = document.getElementById('password-input')

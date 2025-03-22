@@ -1,342 +1,410 @@
 :root {
-    --blue: #56a0f0;
-    --smooth: all .2s ease-in;
+  --blue: #56a0f0;
+  --smooth: all .2s ease-in;
 }
 
 body {
-    font-family: sans-serif;
-    margin: 0;
-    padding: 0;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  text-align: center;
+}
+
+header {
+  background-color: #666262;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: small;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+}
+
+/*logo*/
+.navbar__logo img {
+  width: 70px;
+  height: 61px;
+  object-fit: cover;
+}
+
+.navbar__login img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  background-color: white;
+  border-radius: 100%;
+}
+
+/*menu*/
+.navbar__links {
+  position: fixed;
+  top: 95px;
+  left: 0;
+  width: 60%;
+  height: 100%;
+  background-color: gray;
+  z-index: 5;
+  transition: var(--smooth);
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+.navbar__links.navbar__open {
+  transform: translateX(0);
+  opacity: 1;
+  transition: var(--smooth);
+}
+
+.navbar__link {
+  list-style: none;
+  margin: 50px;
+}
+
+.navbar__link a {
+  font-size: medium;
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  transition: var(--smooth);
+}
+
+.navbar__link a:hover {
+  color: var(--blue);
+  transition: var(--smooth);
+}
+
+/* menu button */
+.navbar_icons {
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+  transition: var(--smooth);
+  z-index: 6;
+}
+
+.navbar__icon {
+  display: flex;
+  width: 45px;
+  height: 6px;
+  background-color: white;
+  border-radius: 5px;
+  transition: var(--smooth);
+  position: relative;
+}
+
+.navbar__icon:before,
+.navbar__icon:after {
+  content: "";
+  position: absolute;
+  width: 45px;
+  height: 6px;
+  background-color: white;
+  border-radius: 5px;
+  transition: var(--smooth);
+}
+
+.navbar__icon:before {
+  transform: translateY(-12px);
+}
+
+.navbar__icon:after {
+  transform: translateY(12px);
+}
+
+/* button animation */
+.open .navbar__icon {
+  transform: translateX(-50px);
+  background: transparent;
+}
+
+.open .navbar__icon:before {
+  transform: rotate(45deg) translate(35px, -35px);
+}
+
+.open .navbar__icon:after {
+  transform: rotate(-45deg) translate(35px, 35px);
+}
+
+/* full màn hình */
+@media (min-width: 70em) {
+  .navbar__logo {
+    margin-left: 200px;
   }
 
-  header {
-    background-color: #666262;
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: small;
-    text-align: center;
-    padding-top: 10px;
-    padding-bottom: 5px;
-  }
-
-  .container {
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 10px;
-  }
-
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding:  0;
-  }
-
-  /*logo*/
-  .navbar__logo img {
-    width: 70px;
-    height: 61px;
-    object-fit: cover;
-  }
-
-  /*menu*/
   .navbar__links {
-    position: fixed;
-    top: -10px;
-    left: 0;
-    width: 40%;
-    height: 100%;
-    background-color: gray;
-    z-index: 5;
-    transition: var(--smooth);
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-
-  .navbar__links.navbar__open {
+    position: initial;
     transform: translateX(0);
     opacity: 1;
-    transition: var(--smooth);
+    background-color: transparent;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
   }
 
   .navbar__link {
-    list-style: none;
-    margin: 50px;
+    margin: 20px;
   }
 
   .navbar__link a {
-    font-size: medium;
-    text-decoration: none;
     color: white;
-    font-weight: 600;
-    transition: var(--smooth);
   }
 
-  .navbar__link a:hover {
-    color: var(--blue);
-    transition: var(--smooth);
+  .navbar__icons {
+    display: none;
   }
 
-  /* menu button */
-  .navbar_icons {
-    justify-content: center;
-    align-items: center;
-    width: 80px;
-    height: 80px;
-    cursor: pointer;
-    transition: var(--smooth);
-    z-index: 6;
+  .navbar__login {
+    margin-right: auto;
   }
+}
 
-  .navbar__icon {
-    display: flex;
-    width: 45px;
-    height: 6px;
-    background-color: white;
-    border-radius: 5px;
-    transition: var(--smooth);
-    position: relative;
-  }
+/* intro vào web */
+.banner {
+  background-image: url('https://images.squarespace-cdn.com/content/v1/5f2729003294916c4921e58b/1628013909072-BYOGEASFLPUYO5ZITBF9/GYM-BG-Olimpia-1.jpg?format=2500w');
+  background-size: 100%;
+  color: white;
+  margin-left: 0px;
+  margin-right: 0px;
+  text-align: center;
+  padding: 300px 0;
+}
 
-  .navbar__icon:before, 
-  .navbar__icon:after {
-    content: "";
-    position: absolute;
-    width: 45px;
-    height: 6px;
-    background-color: white;
-    border-radius: 5px;
-    transition: var(--smooth);
-  }
+.banner h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
 
-  .navbar__icon:before {
-    transform: translateY(-12px);
-  }
+.banner__text {
+  background-color: gray;
+  align-items: center;
+  color: white;
+  padding: 20px;
 
-  .navbar__icon:after {
-    transform: translateY(12px);
-  }
-
-  /* button animation */
-  .open .navbar__icon {
-    transform: translateX(-50px);
-    background: transparent;
-  }
-  
-  .open .navbar__icon:before {
-    transform: rotate(45deg) translate(35px, -35px);
-  }
-
-  .open .navbar__icon:after {
-    transform: rotate(-45deg) translate(35px, 35px);
-  }
-  /* full màn hình */
-  @media (min-width: 70em) {
-    .navbar__logo {
-      margin-left: 200px;
-    }
-    .navbar__links {
-      position: initial;
-      transform: translateX(0);
-      opacity: 1;
-      background-color: transparent;
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      margin-right: auto;
-    }
-    .navbar__link {
-      margin: 20px;
-    }
-    .navbar__link a {
-      color: white;
-    }
-    .navbar__icons {
-      display: none;
-    }
-  }
-
-  /* intro vào web */
-  .banner {
-    background-image: url('https://images.squarespace-cdn.com/content/v1/5f2729003294916c4921e58b/1628013909072-BYOGEASFLPUYO5ZITBF9/GYM-BG-Olimpia-1.jpg?format=2500w');
-    background-size: 100%;
-    color: white;
-    margin-left: 0px;
-    margin-right: 0px;
-    text-align: center;
-    padding: 300px 0;
-  }
-  
-  .banner h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-  }
-  
-  section {
-    text-align: center;
-  }
-  
-  .classes {
-    background-color: #f0f0f0;
-    padding: 20px;
-  }
-
-  /* lý do chọn ... */
-  .reasons {
-    background-color: #e6e3e3;
-    padding: 50px;
-  }
-  .reasons h2 {
+  h1 {
+    margin: 20 0;
     font-size: 30px;
   }
-  .reasons_grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    
-  }
-  .reason {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+
+  img {
+    width: 500px;
+    height: auto;
+    margin: 30;
   }
 
-  .reason_icon img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-  }
-  .reason_text {
-    color: #666262;
-    font-size: 1rem;
-    font-weight: 600;
-    line-height: 1.5;
-  }
-  .reason_text p {
-    margin: 0;
-  }
-
-
-  /* BẢNG GIÁ TẬP */
-  .packages {
-    padding: 20px 20px;
-    padding-bottom: 60px;
-  }
-
-  .packages h2 {
-    font-size: 30px;
-  }
-  
-  .packageList {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-top: 30px;
-  }
-  
-  .package {
-    border: 1px solid #dddddd;
-    border-radius: 8px;
-    width: 300px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .packageHeader {
-    background-color: rgb(130, 137, 139);
-    color: #f0f0f0;
-    padding: 20px;
-  }
-  
-  .packageContent {
-    display: block;
-    border-style: solid;
-    border-color: rgb(130, 137, 139);
-    background-color: #f0f0f0;
-    padding: 20px;
-  }
-  
-  .price {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  .features {
-    list-style: circle;
-    padding: 0;
-    margin-bottom: 20px;
-  }
-  
-  .features li {
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-  }
-  
-  .features li span {
-    margin-right: 10px;
-  }
-  
-  .registerBtn {
-    background-color: #007bff;
-    color: white;
-    font-weight: bold;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-  }
-  
-  .popular {
-    position: relative;
-  }
-  
-  .popularTag {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: #ff9800;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 0.8rem;
-  }
-
-
-  /* cuối trang */
-  .end {
-    background-color: #e6e3e3;
-    display: flex;
-    padding: 20px;
-    align-items: center;
-    justify-content:  center;
-  }
-  .end_logo img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-  }
-  .end_text {
-    color: black;
-    text-align: left;
-    padding: 20px;
-  }
-  .end_name {
-    display: flex;
-    font-size: 20px;
-  }
-  .end_name h1 {
-    color: #d88303;
-    margin: 0%;
-    margin-right: 10px;
-  }
-  .end_name h2 {
-    margin: 0%;
-  }
-  .end_text h1 {
+  h3 {
+    margin: 20 40px;
+    font-family: Arial, Helvetica, sans-serif;
     font-style: italic;
-    margin: 0;
   }
+}
+
+@media (min-width: 70em) {
+  .banner__text {
+    .text_with_img {
+      display: flex;
+      justify-content: center;
+      margin: 0 150px;
+    }
+
+    img {
+      width: 500px;
+      height: auto;
+      margin-right: 50px;
+    }
+
+    .text {
+      font-size: large;
+    }
+  }
+
+
+}
+
+/* lý do chọn ... */
+.reasons {
+  background-color: #e6e3e3;
+  padding: 50px;
+}
+
+.reasons h2 {
+  font-size: 30px;
+}
+
+.reasons_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+
+}
+
+.reason {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.reason_icon img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.reason_text {
+  color: #666262;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.reason_text p {
+  margin: 0;
+}
+
+
+/* BẢNG GIÁ TẬP */
+.packages {
+  padding: 20px 20px;
+  padding-bottom: 60px;
+}
+
+.packages h2 {
+  font-size: 30px;
+}
+
+.packageList {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.package {
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+  width: 300px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.packageHeader {
+  background-color: rgb(130, 137, 139);
+  color: #f0f0f0;
+  padding: 20px;
+}
+
+.packageContent {
+  display: block;
+  border-style: solid;
+  border-color: rgb(130, 137, 139);
+  background-color: #f0f0f0;
+  padding: 20px;
+}
+
+.price {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.features {
+  list-style: circle;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.features li {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.features li span {
+  margin-right: 10px;
+}
+
+.registerBtn {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.popular {
+  position: relative;
+}
+
+.popularTag {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #ff9800;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+}
+
+
+/* cuối trang */
+.end {
+  background-color: #e6e3e3;
+  display: flex;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.end_logo img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.end_text {
+  color: black;
+  text-align: left;
+  padding: 20px;
+}
+
+.end_name {
+  display: flex;
+  font-size: 20px;
+}
+
+.end_name h1 {
+  color: #d88303;
+  margin: 0%;
+  margin-right: 10px;
+}
+
+.end_name h2 {
+  margin: 0%;
+}
+
+.end_text h1 {
+  font-style: italic;
+  margin: 0;
+}

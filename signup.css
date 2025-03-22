@@ -1,0 +1,142 @@
+:root {
+    --accent-color: rgb(118, 159, 247);
+    --base-color: white;
+    --text-color: #2e2b41;
+    --input-color: #e6e4ec;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 12pt;
+    color: var(--text-color);
+    text-align: center;
+}
+body{
+    min-height: 100vh;
+    background-image: url('https://images.squarespace-cdn.com/content/v1/5f2729003294916c4921e58b/1628013909072-BYOGEASFLPUYO5ZITBF9/GYM-BG-Olimpia-1.jpg?format=2500w');
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+.wrapper{
+    box-sizing: border-box;
+    background-color: var(--base-color);
+    height: 100vh;
+    width: max(40%, 600px);
+    padding: 10px;
+    border-radius: 0 20px 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.home img {
+    width: 100px;
+    height: 90px;
+    object-fit: cover;
+    border: solid;
+    border-color: var(--text-color);
+}
+h1{
+    font-size: 3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+form{
+    width: min(400px, 100%);
+    margin-top: 20px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+form > div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+form label{
+    flex-shrink: 0;
+    height: 50px;
+    width: 50px;
+    background-color: var(--accent-color);
+    fill: var(--base-color);
+    color: var(--base-color);
+    border-radius: 10px 0 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+form input{
+    box-sizing: border-box;
+    flex-grow: 1;
+    min-width: 0;
+    height: 50px;
+    padding: 1rem;
+    font: inherit;
+    border-radius: 0 10px 10px 0;
+    border: 2px solid var(--input-color);
+    border-left: none;
+    background-color: var(--input-color);
+    transition: 150ms ease;
+}
+form input:hover{
+    border-color: var(--accent-color);
+}
+form input:focus{
+    outline: none;
+    border-color: var(--accent-color);
+}
+div:has(input:focus) > label{
+    background-color: var(--accent-color);
+}
+form input::placeholder{
+    color: var(--text-color);
+}
+form button {
+    margin-top: 10px;
+    border: none;
+    border-radius: 1000px;
+    padding: .85em 4em;
+    background-color: var(--accent-color);
+    color: var(--base-color);
+    font: inherit;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+form button:hover{
+    background-color: var(--text-color);
+}
+form button:focus{
+    outline: none;
+    background-color: var(--text-color);
+}
+a{
+    text-decoration: none;
+    color: var(--accent-color);
+}
+a:hover{
+    text-decoration: underline;
+}
+
+@media(max-width: 1100px){
+    .wrapper{
+        width: min(600px, 100%);
+        border-radius: none;
+    }
+}
+form div.incorrect label{
+    background-color: rgb(224, 5, 5);
+}
+form div.incorrect input{
+    border-color: rgb(224, 5, 5);
+}
